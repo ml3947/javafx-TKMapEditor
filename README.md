@@ -15,6 +15,7 @@ Now You can get the library to use the map in JavaFX and Unity3D.<br>
 7.地图缩放显示，可以按比例显示地图<br>
 8.单元格属性添加<br>
 <br>
+在U3D和JavaFX里面读取地图的示例将在后面陆续更新上来。<br>
 ###本人博客
 CSDN:[http://blog.csdn.net/wingfourever](http://blog.csdn.net/wingfourever)<br>
 个人博客:[http://www.wjfxgame.com](http://www.wjfxgame.com)<br>
