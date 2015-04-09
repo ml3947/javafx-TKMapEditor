@@ -7,3 +7,6 @@ Now You can get the library to use the map in JavaFX and Unity3D.<br>
 目前已经有库让JavaFX和Unity3D能读取地图。<br>
 
 ![Sample](https://raw.github.com/ml3947/javafx-TKMapEditor/master/SampleImages/e1.png)
+![Sample](https://raw.github.com/ml3947/javafx-TKMapEditor/master/SampleImages/e2.png)
+![Sample](https://raw.github.com/ml3947/javafx-TKMapEditor/master/SampleImages/e3.png)
+![Sample](https://raw.github.com/ml3947/javafx-TKMapEditor/master/SampleImages/e4.png)
