@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wing.game.mapeditor.MainLayoutController">
+   <left>
+      <VBox fillWidth="false" maxWidth="200.0" prefHeight="615.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane animated="false" collapsible="false" prefHeight="260.0" prefWidth="200.0" text="导入图片">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="3.0" layoutY="7.0" text="导入:" />
+                        <TextField fx:id="importImagePathTf" editable="false" layoutX="35.0" layoutY="3.0" prefHeight="23.0" prefWidth="105.0" promptText="图片路径" />
+                        <Button fx:id="browserImportBtn" disable="true" layoutX="144.0" layoutY="3.0" mnemonicParsing="false" onAction="#onBrowserImportImageAction" prefHeight="23.0" prefWidth="53.0" text="浏览" />
+                        <Separator layoutY="32.0" prefWidth="200.0" />
+                        <Label layoutX="3.0" layoutY="42.0" text="图片长度:" />
+                        <TextField fx:id="importImageWidthTf" editable="false" layoutX="62.0" layoutY="38.0" prefHeight="23.0" prefWidth="128.0" />
+                        <TextField fx:id="importImageHeightTf" editable="false" layoutX="62.0" layoutY="68.0" prefHeight="23.0" prefWidth="128.0" />
+                        <Label layoutX="3.0" layoutY="72.0" text="图片宽度:" />
+                        <Label layoutX="3.0" layoutY="103.0" text="图片大小:" />
+                        <TextField fx:id="importImageSizeTf" editable="false" layoutX="62.0" layoutY="99.0" prefHeight="23.0" prefWidth="128.0" />
+                        <Label layoutX="3.0" layoutY="142.0" text="偏移量:" />
+                        <Label layoutX="20.0" layoutY="164.0" text="X:" />
+                        <TextField layoutX="46.0" layoutY="160.0" prefHeight="23.0" prefWidth="33.0" text="0" />
+                        <TextField layoutX="141.0" layoutY="160.0" prefHeight="23.0" prefWidth="33.0" text="0" />
+                        <Label layoutX="115.0" layoutY="164.0" text="Y:" />
+                        <Button fx:id="addToImageBtn" disable="true" layoutX="113.0" layoutY="197.0" mnemonicParsing="false" onAction="#onAddToImageAtlasAction" prefHeight="29.0" prefWidth="82.0" text="添加图片集" />
+                        <Separator layoutY="133.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" prefHeight="362.0" prefWidth="200.0" text="图层列表">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="340.0" prefWidth="202.0">
+                           <children>
+                              <ListView fx:id="layerListView" prefHeight="292.0" prefWidth="210.0" />
+                              <ToolBar fx:id="layerToolbar" disable="true" prefHeight="166.0" prefWidth="200.0">
+                                <items>
+                                    <VBox prefHeight="2.0" prefWidth="185.0" spacing="5.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+                                             <children>
+                                              <Button mnemonicParsing="false" onAction="#onAddNewLayerAction" text="新建" />
+                                                <Button mnemonicParsing="false" onAction="#onDeleteLayerAction" text="删除" />
+                                                <Button mnemonicParsing="false" onAction="#onLayerUpAction" text="上移" />
+                                                <Button mnemonicParsing="false" onAction="#onLayerDownAction" text="下移" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <Label text="透明度:" />
+                                                <Slider fx:id="layerAlphaSlider" max="1.0" prefHeight="14.0" prefWidth="132.0" value="1.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                             <children>
+                                                <Label text="图层:" />
+                                                <CheckBox fx:id="layerShowCheck" mnemonicParsing="false" text="是否显示" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                             <children>
+                                                <Label text="碰撞:" />
+                                                <CheckBox fx:id="layerColliderCheck" mnemonicParsing="false" text="是否碰撞" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="15.0" />
+                                       </padding>
+                                    </VBox>
+                                </items>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="1.0" right="1.0" />
+                                 </VBox.margin>
+                              </ToolBar>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <Pane prefHeight="615.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="617.0" prefWidth="189.0">
+               <children>
+                  <TitledPane animated="false" collapsible="false" prefHeight="272.0" prefWidth="182.0" text="资源列表">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="248.0" prefWidth="194.0">
+                           <children>
+                              <ListView fx:id="altasListView" prefHeight="272.0" prefWidth="203.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" prefHeight="343.0" prefWidth="204.0" text="单元图片集">
+                     <content>
+                        <ScrollPane fx:id="altasCanvasScrollPane" prefHeight="340.0" prefWidth="202.0" />
+                     </content>
+                  </TitledPane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </right>
+   <top>
+      <VBox prefHeight="20.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="文件">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onNewMapAction" text="新建地图文件">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#onOpenMapAction" text="打开地图文件">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onSaveMapAction" text="保存">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onSaveAsMapAction" text="另存为...">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onExportToImageAction" text="导出为图片">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#onAppExit" text="退出" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="设置">
+                  <items>
+                        <Menu mnemonicParsing="false" text="笔刷设置">
+                          <items>
+                              <RadioMenuItem fx:id="normalBrushItem" mnemonicParsing="false" onAction="#onNormalBrushItemAction" text="普通笔刷" />
+                              <RadioMenuItem fx:id="paintPailItem" mnemonicParsing="false" onAction="#onPaintPailItemAction" text="油漆桶" />
+                              <RadioMenuItem fx:id="eraserItem" mnemonicParsing="false" onAction="#onEraserItemAction" text="橡皮擦" />
+                              <RadioMenuItem fx:id="rectItem" mnemonicParsing="false" onAction="#onRectItemAction" text="矩形笔刷" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="显示设置">
+                          <items>
+                              <CheckMenuItem fx:id="showMapGridItem" mnemonicParsing="false" selected="true" text="显示地图网格" />
+                              <CheckMenuItem fx:id="showAltasGridItem" mnemonicParsing="false" selected="true" text="显示贴图网格" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="关于">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onAboutAction" text="关于" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane animated="false" collapsible="false" prefHeight="650.0" prefWidth="622.0" text="地图预览">
+               <content>
+                  <ScrollPane fx:id="mapScrollPane" prefHeight="545.0" prefWidth="620.0" />
+               </content>
+            </TitledPane>
+            <ToolBar prefHeight="44.0" prefWidth="622.0">
+               <items>
+                  <HBox alignment="CENTER" prefHeight="33.0" prefWidth="603.0">
+                     <children>
+                        <Label text="地图大小:  " />
+                        <Label fx:id="mapSizeLabel" text="暂未新建地图" textFill="#e00000" />
+                        <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="125.0">
+                           <children>
+                              <Label text="当前位置:  " />
+                              <Label fx:id="nowMousePositionLabel" text="0 , 0" textFill="#eb0b0b" />
+                           </children>
+                        </HBox>
+                        <Label text="缩放比例:">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                        <Slider fx:id="scaleSlider" max="2.0" value="1.0" />
+                        <Label fx:id="mScaleLabel" text="1.0">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </items>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ToolBar>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

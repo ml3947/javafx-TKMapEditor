@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="334.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane fx:id="mTitledPane" animated="false" collapsible="false" prefHeight="267.0" prefWidth="334.0" text="属性列表" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Microsoft YaHei Bold" size="17.0" />
+         </font>
+         <content>
+            <VBox maxWidth="-Infinity" prefHeight="231.0" prefWidth="349.0">
+               <children>
+                  <TableView fx:id="mPropertyTable" editable="true" prefHeight="249.0" prefWidth="332.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onOkDialogAction" prefHeight="27.0" prefWidth="76.0" text="确定" />
+                        <Button mnemonicParsing="false" onAction="#onAddPropertyAction" prefHeight="27.0" prefWidth="76.0" text="添加" />
+                        <Button mnemonicParsing="false" onAction="#onDeletePropertyAction" prefHeight="27.0" prefWidth="76.0" text="删除" />
+                        <Button mnemonicParsing="false" onAction="#onCancelDialogAction" prefHeight="27.0" prefWidth="76.0" text="取消" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="0.1" left="0.1" right="0.1" />
+               </padding>
+            </VBox>
+         </content>
+      </TitledPane>
+   </children>
+</fx:root>
