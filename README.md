@@ -5,6 +5,9 @@ Now You can get the library to use the map in JavaFX and Unity3D.<br>
 用JavaFX开发的地图编辑器<br>
 目前已经有库让JavaFX和Unity3D能读取地图。<br>
 <br>
+###2015/5/5 更新内容<br>
+更新了JavaFX中读取地图的示例,在Samples/JavaFX下。<br>
+<br>
 ###功能列表
 1.打开地图文件<br>
 2.保存地图文件<br>
