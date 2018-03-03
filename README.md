@@ -21,7 +21,7 @@ Now You can get the library to use the map in JavaFX and Unity3D.<br>
 在U3D和JavaFX里面读取地图的示例将在后面陆续更新上来。<br>
 ###本人博客
 CSDN:[http://blog.csdn.net/wingfourever](http://blog.csdn.net/wingfourever)<br>
-个人博客:[http://www.wjfxgame.com](http://www.wjfxgame.com)<br>
+个人博客:[http://www.wingmei.cn](http://www.wingmei.cn)<br>
 <br>
 ###部分截图
 ![Sample](https://raw.github.com/ml3947/javafx-TKMapEditor/master/SampleImages/e1.png)
