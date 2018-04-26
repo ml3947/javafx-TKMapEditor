@@ -16,7 +16,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root,1024,640);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("WiTKMapEditor V0.7.6.2015.2.16");
+			primaryStage.setTitle("WiTKMapEditor V0.7.8.2018.4.26");
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
 			primaryStage.setResizable(false);
 			primaryStage.show();
