@@ -9,9 +9,9 @@ Now You can get the library to use the map in JavaFX and Unity3D.
 
 目前已经有库让JavaFX和Unity3D能读取地图。
 
-### 2015/5/5 更新内容
+### 2018/4/26 更新内容
 
-更新了JavaFX中读取地图的示例,在Samples/JavaFX下。
+修复了在Mac平台部分文字显示不全的问题。
 
 
 ### 功能列表
